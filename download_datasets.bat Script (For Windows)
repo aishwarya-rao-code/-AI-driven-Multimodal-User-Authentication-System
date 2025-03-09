@@ -1,0 +1,9 @@
+@echo off
+echo Downloading Caltech Face Dataset...
+curl -o caltech_faces.zip "https://doi.org/10.22002/D1.20237"
+
+echo Cloning AudioMNIST Dataset...
+git clone https://github.com/soerenab/AudioMNIST.git
+
+echo Download complete! Extract files if necessary.
+pause
