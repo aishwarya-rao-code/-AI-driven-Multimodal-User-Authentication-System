@@ -6,6 +6,14 @@ This project is part of the midterm AI application requirement, where we have de
 For the **final project**, we will be evaluating trustworthiness aspects such as **fairness, privacy, robustness, and explainability** within this biometric system.
 
 ---
+## Dataset Download Instructions
+This project uses the following datasets:
+- **[Caltech Face Dataset](https://doi.org/10.22002/D1.20237)**
+- **[AudioMNIST](https://github.com/soerenab/AudioMNIST)**
+
+To download the datasets:
+- **Linux/Mac**: Run `./download_datasets.sh`
+- **Windows**: Run `download_datasets.bat`
 
 ## Key Features
 
