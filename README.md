@@ -111,6 +111,13 @@ python biometric_ui_with_final_project.py
 - **EER was significantly reduced**, enhancing security.
 
 ---
+### 🎨 User Interface (GUI) for Better Usability
+- **Tkinter-based UI** for real-time interaction.
+- Displays **model predictions, authentication results, and visualizations**.
+- Helps users interpret **Confusion Matrix, ROC Curve, and Score Distributions**.
+- Ensures transparency in authentication decisions.
+- **API integration planned** for real-world deployment.
+---
 
 ## 🔍 Trustworthiness Aspects (Final Project Focus)
 For the final phase, we will focus on evaluating the following:
