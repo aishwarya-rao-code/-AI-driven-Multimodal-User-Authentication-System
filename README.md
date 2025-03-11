@@ -152,7 +152,7 @@ For the final phase, we will focus on evaluating the following:
 
 ### 🔹 Develop a Trustworthy AI Framework
 - Focus on **fairness, robustness, and transparency** in biometric authentication.
-
+- Also the idea of multimodel biometrics authentication is taken from mobile biometrics class as a reference from my project last semester.
 ---
 
 ## 👨‍💻 Developed by
