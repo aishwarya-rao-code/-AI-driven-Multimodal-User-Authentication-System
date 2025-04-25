@@ -1,161 +1,119 @@
-# Multimodal Biometric Authentication System
+# Multimodal Biometric Authentication System (Final Project)
 
-## Project Overview
-This project is part of the midterm AI application requirement, where we have developed an **AI-driven Multimodal User Authentication System** that integrates **Face and Voice Biometrics**. By combining both modalities through **feature-level fusion**, the system significantly enhances authentication accuracy and security. We have applied advanced **machine learning and deep learning** techniques to achieve this.
+## Project Objective
+This project is built on the midterm work where we developed an AI-powered Multimodal User Authentication System that combines Face and Voice Biometrics. For the final phase, we evaluated the system's trustworthiness based on key aspects:
 
-For the **final project**, we will be evaluating trustworthiness aspects such as **fairness, privacy, robustness, and explainability** within this biometric system.
+- Privacy
+- Fairness and Bias
+- Robustness and Reliability
+- Transparency and Explainability
+- Accountability and Responsibility
 
----
+We made sure the system not only performs well but is also secure and trustworthy for real-world use.
+
 ## Dataset Download Instructions
-This project uses the following datasets:
-- **[Caltech Face Dataset](https://doi.org/10.22002/D1.20237)**
-- **[AudioMNIST](https://github.com/soerenab/AudioMNIST)**
+We used the following datasets:
+- Caltech Face Dataset: https://doi.org/10.22002/D1.20237
+- AudioMNIST Dataset: https://github.com/soerenab/AudioMNIST
 
-To download the datasets:
-- **Linux/Mac**: Run `./download_datasets.sh`
-- **Windows**: Run `download_datasets.bat`
+Download instructions:
+- Linux/Mac: `./download_datasets.sh`
+- Windows: `download_datasets.bat`
 
 ## Key Features
 
-### 🔹 AI-Powered Biometric Authentication
-- Uses **facial and voice recognition** to enhance security.
+- AI-powered authentication using face and voice together
+- Feature-Level Fusion to combine modalities
+- Machine Learning Models: Random Forest, SVM, k-NN
+- Deep Learning for feature extraction: CNNs and LSTMs
+- Performance metrics: Confusion Matrix, ROC Curve, EER, d-prime
+- Tkinter-based GUI for real-time testing
+- Privacy enhancement by hashing fused features
+- Explainable AI using SHAP and LIME
+- Robustness testing with noisy and blurred inputs
 
-### 🔹 Feature-Level Fusion
-- Merges **facial and voice features** to create a more robust representation.
+## Project Structure
 
-### 🔹 Machine Learning and Deep Learning Models
-- **Baseline Models**: Random Forest, SVM, k-NN.
-- **Advanced Models**: CNNs and LSTMs for feature extraction.
-
-### 🔹 Performance Metrics Visualization
-- **Confusion Matrix**
-- **Multiclass ROC Curve**
-- **Score Distribution** for Genuine and Impostor Users
-- **Equal Error Rate (EER)** and **d-prime calculations**
-
-### 🔹 Trustworthiness Considerations
-- **Bias detection and fairness analysis**
-- **Privacy-preserving techniques** (encryption, differential privacy)
-- **Explainable AI (XAI)** methods for transparency
-
-### 🔹 User Interface
-- **Tkinter-based UI** for easy interaction.
-- **API integration** planned for real-world deployment.
-
----
-
-## 📂 Project Files
 | File | Description |
 |------|-------------|
-| `biometric_ui_with_final_project.py` | UI implementation using Tkinter to execute and display authentication results. |
-| `Final_Project.py` | Main AI script handling biometric data processing, training models, and visualization. |
-| `Multimodal_Authentication_System_Using_Face_and_Voice_Data.pdf` | Detailed project report covering methodology and findings. |
-| `Screenshots/` | Sample outputs from the system, including Confusion Matrix, ROC Curve, and Score Distribution. |
+| `biometric_ui_with_final_project.py` | Tkinter GUI to run the system |
+| `Final_Project.py` | Main code for data processing, training, and evaluation |
+| `Screenshots/` | Folder containing output visualizations |
+| `Multimodal_Authentication_System_Using_Face_and_Voice_Data.pdf` | Detailed report |
 
----
+## How to Run
 
-## 🚀 How to Run the Application
-
-### 1️⃣ Install Dependencies
-```sh
+### Install Requirements
+```bash
 pip install numpy opencv-python librosa scikit-learn imbalanced-learn matplotlib seaborn tkinter
 ```
 
-### 2️⃣ Run the Biometric Authentication System
-```sh
+### Run the Application
+```bash
 python biometric_ui_with_final_project.py
 ```
 
-### 3️⃣ Interact with the UI
-- Click on **"Run Biometric System"** to initiate authentication.
-- View real-time results, including performance visualizations.
+### Interact
+- Click "Run Biometric System" in the GUI
+- View Confusion Matrix, ROC Curve, and authentication results
+
+## System Workflow
+
+1. Data Collection and Preprocessing (Face and Voice)
+2. Feature Extraction
+3. Feature-Level Fusion
+4. Privacy: Save and Hash fused features
+5. Train Models using Stratified K-Fold
+6. Apply SMOTE for dataset balancing
+7. Performance Evaluation
+8. Explainability with SHAP and LIME
+9. Robustness Testing with distortions
+
+## Results Summary
+
+| Metric | Face Only | Voice Only | Multimodal |
+|--------|-----------|------------|------------|
+| Accuracy | 99% | 95% | 99% |
+| ROC AUC | 1.00 | 0.99 | 1.00 |
+| EER | 0.0001 | 0.0149 | 0.0001 |
+| d-prime | 11.98 | 4.93 | 12.22 |
+
+**Insight:** Multimodal authentication is stronger than face-only or voice-only systems.
+
+## Trustworthiness Aspects
+
+| Aspect | What we did |
+|--------|-------------|
+| Privacy | Feature hashing, no raw data storage |
+| Fairness | Used SMOTE to balance data |
+| Transparency | SHAP and LIME visualizations |
+| Robustness | Tested under noisy and blurred conditions |
+| Reliability | Used Stratified K-Fold cross-validation |
+| Accountability | Focused on data security and ethical design |
+
+## Future Work
+
+- Add Score-Level and Decision-Level Fusion
+- Expand with larger and diverse datasets
+- Improve GUI with real-time visual analytics
+- Explore encryption for further privacy protection
+- Complete demographic-based fairness evaluation
+
+## Developed by
+- Aishwarya Rao Kallepu
+- Anil Reddy Vangala
+- Shashidhar Reddy Kamatham
+
+## Submission Notes
+- Code and documentation organized
+- README file updated clearly
+- Trustworthiness evaluations done as per project objective
+- Ready for final submission
 
 ---
 
-## 🔄 System Workflow
-
-### 1️⃣ Data Collection and Preprocessing
-- **Face images**: Resized, normalized, and edge features extracted.
-- **Audio samples**: Resampled, MFCC & spectral contrast features extracted.
-
-### 2️⃣ Feature-Level Fusion
-- Facial and voice features are combined into a **single vector per user**.
-
-### 3️⃣ Model Training
-- **Stratified k-Fold Cross Validation (k=5)**.
-- **SMOTE applied** for dataset balancing.
-
-### 4️⃣ Performance Evaluation
-- **Confusion Matrix** for classification accuracy.
-- **Multiclass ROC Curve** to measure model performance.
-- **Score Distribution** to compare genuine vs. impostor users.
-- **Equal Error Rate (EER) and d-prime calculations**.
-
-### 5️⃣ User Interface & API Development
-- **Tkinter-based UI** allows users to run the system interactively.
-- **API development** is ongoing for external system integration.
+> This project idea also takes reference from the Mobile Biometrics course project from last semester, where we studied the future of multimodal biometric systems.
 
 ---
 
-## 📊 Results Summary
-| Metric | Face-Only | Voice-Only | Multimodal |
-|--------|----------|-----------|------------|
-| **Accuracy** | 99% | 95% | 99% |
-| **ROC AUC** | 1.00 | 0.99 | 1.00 |
-| **EER** | 0.0001 | 0.0149 | 0.0001 |
-| **d-prime** | 11.98 | 4.93 | 12.22 |
-
-**Key Insights:**
-- **Multimodal authentication** performed **better** than unimodal systems.
-- **SVM** delivered the best results, closely followed by **Random Forest**.
-- **EER was significantly reduced**, enhancing security.
-
----
-### 🎨 User Interface (GUI) for Better Usability
-- **Tkinter-based UI** for real-time interaction.
-- Displays **model predictions, authentication results, and visualizations**.
-- Helps users interpret **Confusion Matrix, ROC Curve, and Score Distributions**.
-- Ensures transparency in authentication decisions.
-- **API integration planned** for real-world deployment.
----
-
-## 🔍 Trustworthiness Aspects (Final Project Focus)
-For the final phase, we will focus on evaluating the following:
-
-### ✅ **Fairness & Bias Detection**
-- Analyse potential biases in model predictions across different demographics.
-
-### ✅ **Privacy & Security**
-- Implement **encryption and differential privacy** techniques to protect biometric data.
-
-### ✅ **Explainability (XAI)**
-- Use **SHAP and LIME** to interpret model decisions.
-
-### ✅ **Robustness**
-- Assess system resilience against **adversarial attacks** and **noisy inputs**.
-
----
-
-## 🔮 Future Enhancements
-
-### 🔹 Expand Deep Learning Models
-- Implement **CNNs and LSTMs** for improved feature extraction.
-
-### 🔹 Experiment with Fusion Techniques
-- Extend beyond **feature-level fusion** to include **score-level and decision-level fusion**.
-
-### 🔹 Enhance Dataset Diversity
-- Incorporate **real-world samples** for better model generalization.
-
-### 🔹 Improve User Interface
-- Upgrade UI with **interactive visualizations** and **real-time authentication testing**.
-
-### 🔹 Develop a Trustworthy AI Framework
-- Focus on **fairness, robustness, and transparency** in biometric authentication.
-- Also the idea of multimodel biometrics authentication is taken from mobile biometrics class as a reference from my project last semester.
----
-
-## 👨‍💻 Developed by
-- **Aishwarya Rao Kallepu**
-- **Anil Reddy Vangala**
-- **Shashidhar Reddy Kamatham**
+Thank you for reviewing our work!
