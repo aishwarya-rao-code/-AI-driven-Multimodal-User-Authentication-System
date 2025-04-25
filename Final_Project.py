@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+x#!/usr/bin/env python
 # coding: utf-8
 
 # Loading Librarires 
@@ -284,8 +284,20 @@ def align_face_voice_data(X_faces, y_faces, X_voices, y_voices):
         np.array(X_voices_aligned),
         np.array(y_voices_aligned),
     )
+# === Privacy Enhancement ===
+import hashlib
+import numpy as np
+import os
 
-
+# Simulate extracting a single fused feature vector for a user
+if 'X_combined' in locals() and len(X_combined) > 0:
+    fused_feature_vector = X_combined[0]  # take first user sample
+    os.makedirs("features", exist_ok=True)
+    np.save("features/user_fused_features.npy", fused_feature_vector)
+    hashed_id = hashlib.sha256(fused_feature_vector.tobytes()).hexdigest()
+    print("Generated Hashed ID for Privacy:", hashed_id)
+else:
+    print("Privacy module skipped: 'X_combined' not found or empty.")
 
 # Visulaize the Results
 
