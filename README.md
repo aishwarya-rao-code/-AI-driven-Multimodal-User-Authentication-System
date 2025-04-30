@@ -19,6 +19,13 @@ We used the following datasets:
 Download instructions:
 - Linux/Mac: `./download_datasets.sh`
 - Windows: `download_datasets.bat`
+### Code Attribution
+
+We have used a few open-source tools in our project to support explainability and fairness:
+
+- **[SHAP](https://github.com/slundberg/shap)** was used to understand which features influence the model’s predictions the most.
+- **SMOTE** from the `imbalanced-learn` library helped us balance the dataset properly so that the model doesn’t get biased.
+- **[LIME](https://github.com/marcotcr/lime)** was used to explain individual predictions in a simple and interpretable way.
 
 ## Key Features
 
